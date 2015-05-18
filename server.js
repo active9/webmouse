@@ -4,7 +4,7 @@ var express = require('express'),
     exec = require('shelljs').exec,
     webmouse = require('./lib/webmouse.js');
 
-app.use(express.static(path.resolve('./html')));
+app.use(express.static(path.resolve(__dirname +'/html')));
 
 app.get("/request/*:url", function(req, res) {
 	var url = req.params.url + req.params[0];
