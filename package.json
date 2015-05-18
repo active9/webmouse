@@ -1,7 +1,7 @@
 {
     "name": "webmouse",
     "description": "Cloud Web Browser",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "dependencies": {
         "events": "*",
         "casperjs": "*",
@@ -9,7 +9,8 @@
         "shelljs": "*"
     },
     "bin": {
-        "webmouse": "./bin/webmouse"
+        "webmouse": "./bin/webmouse",
+        "webmousegui": "./bin/webmousegui"
     },
     "scripts": {
         "start": "node server.js"

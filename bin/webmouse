@@ -2,33 +2,30 @@
 
 var jsonopt = require('../config.json');
 var casper = require('casper').create(jsonopt);
-if (typeof process !== "undefined") {
-	require("../server.js");
+
+var args = casper.cli.args;
+
+if (typeof args[1] != "undefined") {
+	var mouse = require('mouse').create(casper);
+	var x = args[0].split("x")[0];
+	var y = args[0].split("x")[1];
+	var offset = args[0].split("x")[2];
+	var url = args[1].substr(1,args[1].length);
+
+	casper.start(url,function() {
+	    this.scrollTo(0,offset);
+            this.mouse.click(Math.ceil(x),Math.ceil(y));
+	});
+	casper.then(function() {
+	    //this.echo(this.getCurrentUrl() +"||"+ this.captureBase64('jpeg'));
+	    this.echo(this.getCurrentUrl());
+	});
+	casper.run();
 } else {
-	var args = casper.cli.args;
-
-	if (typeof args[1] != "undefined") {
-		var mouse = require('mouse').create(casper);
-		var x = args[0].split("x")[0];
-		var y = args[0].split("x")[1];
-		var offset = args[0].split("x")[2];
-		var url = args[1].substr(1,args[1].length);
-
-		casper.start(url,function() {
-		    this.scrollTo(0,offset);
-	            this.mouse.click(Math.ceil(x),Math.ceil(y));
-		});
-		casper.then(function() {
-		    //this.echo(this.getCurrentUrl() +"||"+ this.captureBase64('jpeg'));
-		    this.echo(this.getCurrentUrl());
-		});
-		casper.run();
-	} else {
-		var url = args[0];
-		casper.start(url, function() {
-		    this.echo(this.captureBase64('jpeg'));
-		});
-		casper.run();
-	}
+	var url = args[0];
+	casper.start(url, function() {
+	    this.echo(this.captureBase64('jpeg'));
+	});
+	casper.run();
 }
 
