@@ -2,13 +2,14 @@ var express = require('express'),
     path = require('path'),
     app = express(),
     exec = require('shelljs').exec,
-    webmouse = require('./lib/webmouse.js');
+    webmouse = require('./lib/webmouse.js'),
+    webmousebin = __dirname +"/bin/webmouse";
 
 app.use(express.static(path.resolve(__dirname +'/html')));
 
 app.get("/request/*:url", function(req, res) {
 	var url = req.params.url + req.params[0];
-	exec("casperjs webmouse "+ url, function(code, output) {
+	exec("casperjs "+ webmousebin +" "+ url, function(code, output) {
 		res.send(output);
 	});
 })
@@ -17,7 +18,7 @@ app.get("/*:xyurl", function(req, res) {
 	var xy = req.params.xyurl.split("/")[0];
 	var url = req.params.xyurl.replace(req.params.xyurl.split("/")[0], "") + req.params[0];
 
-	exec("casperjs webmouse "+ xy +" "+ url, function(code, output) {
+	exec("casperjs "+ webmousebin +" "+ xy +" "+ url, function(code, output) {
 		res.send(output);
 	});
 })

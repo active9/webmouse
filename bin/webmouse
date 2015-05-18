@@ -17,7 +17,6 @@ if (typeof args[1] != "undefined") {
             this.mouse.click(Math.ceil(x),Math.ceil(y));
 	});
 	casper.then(function() {
-	    //this.echo(this.getCurrentUrl() +"||"+ this.captureBase64('jpeg'));
 	    this.echo(this.getCurrentUrl());
 	});
 	casper.run();
