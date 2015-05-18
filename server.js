@@ -1,9 +1,10 @@
-var express = require('express');
-var app = express();
-var exec = require('shelljs').exec;
-var webmouse = require('./lib/webmouse.js');
+var express = require('express'),
+    path = require('path'),
+    app = express(),
+    exec = require('shelljs').exec,
+    webmouse = require('./lib/webmouse.js');
 
-app.use(express.static('./html'));
+app.use(express.static(path.resolve('./html')));
 
 app.get("/request/*:url", function(req, res) {
 	var url = req.params.url + req.params[0];
