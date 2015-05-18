@@ -4,9 +4,7 @@ var jsonopt = require('../config.json');
 var casper = require('casper').create(jsonopt);
 if (typeof casper.cli =="undefined") {
 	var args = process.argv;
-	if (args[args.length-1]=="start") {
-		require("../server.js");
-	}
+	require("../server.js");
 } else {
 	var args = casper.cli.args;
 
