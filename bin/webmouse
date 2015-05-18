@@ -7,7 +7,7 @@ if (typeof process !== "undefined") {
 } else {
 	var args = casper.cli.args;
 
-	if (typeof args[0] == "start") {
+	if (args[0] == "start" | args[1] == "start") {
 		require("../server.js");
 	} else if (typeof args[1] != "undefined") {
 		var mouse = require('mouse').create(casper);
