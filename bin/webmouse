@@ -1,6 +1,6 @@
 #!/usr/bin/env casperjs
 
-var jsonopt = require('../config.json');
+var jsonopt = require(__dirname +'/config.json');
 var casper = require('casper').create(jsonopt);
 
 var args = casper.cli.args;
