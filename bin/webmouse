@@ -3,12 +3,13 @@
 var jsonopt = require('../config.json');
 var casper = require('casper').create(jsonopt);
 if (typeof process !== "undefined") {
-	var args = process.argv;
 	require("../server.js");
 } else {
 	var args = casper.cli.args;
 
-	if (typeof args[1] != "undefined") {
+	if (typeof args[0] == "start") {
+		require("../server.js");
+	} else if (typeof args[1] != "undefined") {
 		var mouse = require('mouse').create(casper);
 		var x = args[0].split("x")[0];
 		var y = args[0].split("x")[1];
