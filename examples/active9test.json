@@ -1,0 +1,23 @@
+[
+	{
+		"name": "active9",
+		"output": "active9.png",
+		"start": "http://www.active9.com/",
+		"click": "li a",
+		"save": {
+			"output": "active9.html",
+			"select": "*"
+		},
+		"click": "li a",
+		"capture": {
+			"output": "active9b.png",
+			"select": "body"
+		},
+		"click_2": "li a",
+		"capture_2": {
+			"output": "active9c.png",
+			"select": "*"
+		},
+		"exit": true
+	}
+]

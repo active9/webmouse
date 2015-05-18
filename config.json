@@ -1,0 +1,19 @@
+{
+		"silentErrors": true,
+		"timeout": 60000,
+		"stepTimeout": 30000,
+		"retryTimeout": 250,
+		"waitTimeout": 1000,
+		"viewportSize": {
+			"width": 1024,
+			"height": 768
+		},
+		"pageSettings": {
+			"javascriptEnabled": true,
+			"loadImages": true,
+			"loadPlugins": true,
+			"localToRemoteUrlAccessEnabled": true,
+			"XSSAuditingEnabled": true,
+			"userAgent": "Mozilla/5.0 (WebMouse; rv:23.0) Gecko/20130404 Firefox/23.0"
+		}
+}

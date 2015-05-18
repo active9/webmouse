@@ -1,0 +1,45 @@
+{
+  "name": "webmouse",
+  "description": "Cloud Web Browser",
+  "version": "0.0.1",
+  "dependencies": {
+    "casperjs": "*",
+    "express": "*",
+    "shelljs": "*"
+  },
+  "bin": {
+    "webmouse": "./bin/webmouse"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js",
+  "directories": {
+    "example": "examples"
+  },
+  "devDependencies": {
+    "casperjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/active9/webmouse"
+  },
+  "keywords": [
+    "cloud",
+    "web",
+    "browser",
+    "casperjs",
+    "phantomjs",
+    "mouse",
+    "jpeg",
+    "image",
+    "screen",
+    "shot"
+  ],
+  "author": "Active 9 LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/active9/webmouse/issues"
+  },
+  "homepage": "https://github.com/active9/webmouse"
+}
