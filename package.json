@@ -1,8 +1,9 @@
 {
     "name": "webmouse",
     "description": "Cloud Web Browser",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "dependencies": {
+        "events": "*",
         "casperjs": "*",
         "express": "*",
         "shelljs": "*"
