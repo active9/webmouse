@@ -20,9 +20,14 @@ to navigate around the web. Each web page request will be rendered as an output 
 ##USING
 WebMouse works as a middleware or a stand-alone server. The easiest way to get started is to start the WebMouse server and point your browser to http://localhost.rocks/
 
-To use the webmouse server try starting it with:
+To use the webmouse server just try starting it with:
 ```bash
-webmouse start
+webmouse
+```
+
+To use webmouse to directly output to the console try:
+```bash
+casperjs webmouse http://www.active9.com/
 ```
 
 To use WebMouse as a middleware try:
