@@ -1,12 +1,13 @@
 {
     "name": "webmouse",
     "description": "Cloud Web Browser",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "dependencies": {
         "events": "*",
         "casperjs": "*",
         "express": "*",
-        "shelljs": "*"
+        "shelljs": "*",
+        "cors": "*"
     },
     "bin": {
         "webmouse": "./bin/webmouse",

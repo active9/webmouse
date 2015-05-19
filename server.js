@@ -3,8 +3,10 @@ var express = require('express'),
     app = express(),
     exec = require('shelljs').exec,
     webmouse = require('./lib/webmouse.js'),
+    cors = require('cors'),
     webmousebin = __dirname +"/bin/webmouse";
 
+app.use(cors());
 app.use(express.static(path.resolve(__dirname +'/html')));
 
 app.get("/request/*:url", function(req, res) {
