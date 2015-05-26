@@ -1,7 +1,7 @@
 {
 		"silentErrors": true,
-		"timeout": 60000,
-		"stepTimeout": 30000,
+		"timeout": 15000,
+		"stepTimeout": 15000,
 		"retryTimeout": 250,
 		"waitTimeout": 1000,
 		"viewportSize": {
@@ -14,6 +14,6 @@
 			"loadPlugins": true,
 			"localToRemoteUrlAccessEnabled": true,
 			"XSSAuditingEnabled": true,
-			"userAgent": "Mozilla/5.0 (WebMouse; rv:23.0) Gecko/20130404 Firefox/23.0"
+			"userAgent": "Mozilla/5.0 (WebMouse)Gecko/20100101 Firefox/38.0"
 		}
 }

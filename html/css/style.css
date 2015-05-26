@@ -47,3 +47,6 @@ html,body {
 #progbar {
   width:100%
 }
+#elementJSON {
+  display:none;
+}

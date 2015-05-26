@@ -12,20 +12,27 @@ if (typeof args[1] != "undefined") {
 	var y = args[0].split("x")[1];
 	var offset = args[0].split("x")[2];
 	var url = args[1].substr(1,args[1].length);
-
 	casper.start(url,function() {
-	    this.scrollTo(0,offset);
-            this.mouse.click(Math.ceil(x),Math.ceil(y));
-	});
-	casper.then(function() {
-	    this.echo(this.getCurrentUrl());
+	    casper.waitForSelector("body", function() {
+	            this.scrollTo(0,offset);
+                    this.mouse.click(Math.ceil(x),Math.ceil(y));
+		    this.echo(this.getCurrentUrl());
+	    });
 	});
 	casper.run();
 } else {
+        var base64cap = null;
 	var url = args[0];
 	casper.start(url, function() {
-	    this.echo(this.captureBase64('jpeg'));
+	    casper.waitForSelector("body", function() {
+  	    	base64cap = this.captureBase64('png','*');
+	    	this.echo(JSON.stringify(this.getElementsInfo('a')) +"|WEBMOUSE|");
+	    });
 	});
-	casper.run();
+	casper.run(function() {
+	        this.echo(base64cap);
+		this.echo("");
+		this.exit();
+	});
 }
 
