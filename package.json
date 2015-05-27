@@ -11,7 +11,8 @@
     },
     "bin": {
         "webmouse": "./bin/webmouse",
-        "webmousegui": "./bin/webmousegui"
+        "webmousegui": "./bin/webmousegui",
+        "webmouserunner": "./bin/webmouserunner"
     },
     "scripts": {
         "start": "node server.js"
