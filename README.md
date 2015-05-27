@@ -3,13 +3,13 @@
 
 Cloud Web Browser
 
-##Requirements
+#Requirements
 
 - NodeJS
 - Python 2.7.9+
 - CasperJS Globally Installed
 
-##Installing Requirements
+#Installing Requirements
 
 NodeJS can be downloaded at http://nodejs.org
 Python can be downloaded at http://python.org
@@ -19,24 +19,24 @@ Installing CasperJS globally can be done by typing:
 npm install casperjs -g
 ```
 
-##Installing WebMouse
+#Installing WebMouse
 
 ```bash
 npm install webmouse -g
 ```
 
-##Introduction
+#Introduction
 
 The WebMouse concept is to create a 100% cloud rendered web browsing experience using only your mouse to navigate by clicking on screen shots of any given web page. Much like digital library news readers WebMouse captures images of a given page and displays it to the client. The client may then click on the page
 to navigate around the web. Each web page request will be rendered as an output image. In short WebMouse allows for decentralized cloud based web browsing while interacting with a static image of any given url.
 
-##WHAT WEBMOUSE DOES
+#WHAT WEBMOUSE DOES
 
 - Cloud Web Browsing
 - Web Scraping
 - Web Crawling
 
-##USING
+#USING
 
 WebMouse works as a middleware or a stand-alone server. The easiest way to get started is to start the WebMouse server and point your browser to http://localhost.rocks/
 
@@ -98,18 +98,18 @@ Here is an example Jsondata WebMouse script:
 
 This WebMouse script will run a routine to capture screenshots and scrape html from active9.com.
 
-##HOW IT WORKS
+#HOW IT WORKS
 
 WebMouse at it's core utilizes CasperJS to render and interact with web pages. The given web page is rendered to a base64 encoded jpeg and sent to the browser or saved as a file. In server mode webmouse enables a user to directly interact with WebMouse via the included WebMouse gui. This gui will allow you to type in a url of your choosing and interact with the rendered page. In middleware mode you can create your own custom routines to interact with WebMouse.
 
-##KNOWN ISSUES
+#KNOWN ISSUES
 
  - Mobile device clicks do not register the proper element click on the page due to the mobile viewport.
 
-##CONTRIBUTING
+#CONTRIBUTING
 
 We encourage forking. Feel free to fork & pull your new additions, or bug fixes.
 
-##LICENSE
+#LICENSE
 MIT
 

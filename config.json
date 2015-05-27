@@ -1,9 +1,9 @@
 {
 		"silentErrors": true,
-		"timeout": 15000,
-		"stepTimeout": 15000,
-		"retryTimeout": 250,
-		"waitTimeout": 1000,
+		"timeout": 300000,
+		"stepTimeout": 300000,
+		"retryTimeout": 1000,
+		"waitTimeout": 5000,
 		"viewportSize": {
 			"width": 1024,
 			"height": 768
