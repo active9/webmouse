@@ -3,6 +3,7 @@
 var __dirname = phantom.args[0].split('=')[1].replace('casperjs','webmouse');
 var jsonopt = require(__dirname +'/config.json');
 var casper = require('casper').create(jsonopt);
+var mouse = require('mouse');
 
 var args = casper.cli.args;
 var jsondata = args[0];
