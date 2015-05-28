@@ -1,7 +1,4 @@
-﻿var mouse = require('mouse');
-var casper = require('casper');
-
-var jsondata = require('./examples/active9test.json')[0];
-var webmouse = require('./lib/webmouse.js')(jsondata,mouse,casper,function(data) {
+﻿var jsondata = require('./examples/active9test.json')[0];
+var webmouse = require('./lib/webmouse.js')(jsondata,function(data) {
 	console.log("Capture Complete.");
 });
