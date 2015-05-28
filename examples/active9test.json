@@ -1,26 +1,26 @@
 [
-	{
-		"name": "active9",
-		"output": "active9.png",
-		"start": "http://www.active9.com/",
-		"keys": {
-			"output": "webmouse",
-			"select": "#q"
-		"click": "button .searchicon",
-		"save": {
-			"output": "active9.html",
-			"select": "*"
-		},
-		"click": ".results_web a",
-		"capture": {
-			"output": "active9b.png",
-			"select": "body"
-		},
-		"click_2": "a[2]",
-		"capture_2": {
-			"output": "active9c.png",
-			"select": "*"
-		},
-		"exit": true
-	}
+    {
+        "name": "active9",
+        "output": "active9.png",
+        "start": "http://www.active9.com/",
+        "keys": {
+            "output": "webmouse"
+        },
+        "select": "#q",
+        "click": ".results_web a",
+        "save": {
+            "output": "active9.html",
+            "select": "*"
+        },
+        "capture": {
+            "output": "active9b.png",
+            "select": "body"
+        },
+        "click_2": "a[2]",
+        "capture_2": {
+            "output": "active9c.png",
+            "select": "*"
+        },
+        "exit": true
+    }
 ]
