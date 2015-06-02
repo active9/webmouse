@@ -1,0 +1,7 @@
+#!/usr/bin/env casperjs
+
+var __dirname = phantom.args[0].split('=')[1].replace('casperjs','webmouse');
+var jsonopt = require(__dirname +'/config.json');
+var webmouse = require(__dirname +'/lib/webmouse.js')(jsonopt,function(data) {
+	console.log("Capture Complete.");
+});

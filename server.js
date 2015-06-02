@@ -1,11 +1,11 @@
 var express = require('express'),
     path = require('path'),
-    app = express(),
-    exec = require('shelljs').exec,
-    webmouse = require('./lib/webmouse.js'),
     cors = require('cors'),
-    webmousebin = __dirname +"/bin/webmouse";
-    webmouserunner = __dirname +"/bin/webmouserunner";
+    exec = require('shelljs').exec,
+    webmouse = require('./lib/webmouse.js');
+var app = express();
+    var webmousebin = __dirname +"/bin/webmouse";
+    var webmouserunner = __dirname +"/bin/webmouserunner";
 
 app.use(cors());
 app.use(express.static(path.resolve(__dirname +'/html')));
@@ -22,9 +22,9 @@ app.get("/request/*:url", function(req, res) {
 	});
 });
 
-app.get("/runner/*:json", function(req, res) {
-	var json = req.params.json + req.params[0];
-	var child = exec("casperjs "+ webmouserunner +" "+ json, {async:true});
+app.post("/runner/*:file", function(req, res) {
+	var file = req.params.file + req.params[0];
+	var child = exec("casperjs "+ webmouserunner +" "+ file, {async:true});
 	var writebuffer = "";
 	child.stdout.on('data', function(data) {
 		writebuffer += data;

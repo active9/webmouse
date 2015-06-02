@@ -1,7 +1,15 @@
-#!/usr/bin/env casperjs
+#!/usr/bin/env node
 
-var __dirname = phantom.args[0].split('=')[1].replace('casperjs','webmouse');
-var jsonopt = require(__dirname +'/config.json');
-var webmouse = require(__dirname +'/lib/webmouse.js')(jsonopt,function(data) {
-	console.log("Capture Complete.");
+var webmousetail = __dirname +"/bin/webmousetail";
+var exec = require('shelljs').exec;
+var argument = process.argv[process.argv.length];
+var child = exec("casperjs "+ webmousetail +" "+ argument, {async:true});
+var writebuffer = "";
+
+child.stdout.on('data', function(data) {
+	writebuffer += data;
 });
+child.stdout.on('end', function() {
+	console.log(writebuffer);
+});
+console.log("Webmouse Runner:", writebuffer);

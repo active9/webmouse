@@ -1,6 +1,24 @@
 $(document).ready(function() {
 
+	var historyURL = ['http://www.npmjs.com/webmouse'];
+	var historyINDEX = 0;
 	var currentURL = "";
+	var currentINDEX = 0;
+
+	// Brute Force
+	$("#goBack").prop("disabled", true);
+	$("#goForward").fadeOut('fast');
+
+	function goBackwards() {
+		historyINDEX--;
+		currentINDEX = currentINDEX-1-1;
+		request(historyURL[currentINDEX]);
+	}
+
+	function goForwards() {
+		historyINDEX--;
+		request(historyURL[currentINDEX]);
+	}
 
 	function showLoader() {
 		$("#go").html('<img src="img/loader.gif" >');
@@ -8,7 +26,7 @@ $(document).ready(function() {
 	}
 
 	function hideLoader() {
-		$("#go").html('&gt;');
+		$("#go").html('<i class="glyphicon glyphicon-triangle-right"></i>');
 		$("#footerprogress").fadeOut('fast');
 	}
 
@@ -51,7 +69,16 @@ $(document).ready(function() {
 		return false;
 	}
 
+	$("#goBack").click(function(e) {
+		goBackwards();
+	});
+
+	$("#goForward").click(function(e) {
+		goForwards();
+	});
+
 	$("#go").click(function() {
+		historyINDEX = currentINDEX;
 		request($("#urlbox").val());
 	});
 
@@ -92,15 +119,29 @@ $(document).ready(function() {
 		blueLoader();
 		showLoader();
 		$.get( "/request/"+ url, function( data ) {
+			console.log("Request:", url, currentINDEX, historyINDEX);
 			data = data.split("|WEBMOUSE|");
 			$("#elementJSON").text(data[0]);
 			$("#mousevision").attr('src', "data:image/png;base64,"+ data[1]);
 			hideLoader();
 			$("#urlbox").val(url);
 			currentURL = url;
+			historyURL[currentINDEX] = url;
+			historyINDEX++;
+			currentINDEX++;
+			if (currentINDEX>1) {
+				$("#goBack").prop("disabled", false);
+			} else {
+				$("#goBack").prop("disabled", true);
+			}
+			if (currentINDEX<historyINDEX) {
+				$("#goForward").fadeIn('fast');
+			} else {
+				$("#goForward").fadeOut('fast');
+			}
 		});
 	}
 
-	request("http://www.npmjs.com/webmouse");
+	request(historyURL[0]);
 
 });

@@ -20,9 +20,13 @@
       <div class="container">
         <div id="navbar">
           <form action="#" class="navbar-form navbar">
-      	      <img src="img/webmouse.png" id="webmouseimg" />
-    	    <div class="input-group input-group-lg col-sm-12 col-md-12 col-lg-12">
-              <input id="urlbox" type="text" placeholder="http://" class="input-lg form-control">
+    	    <div class="input-group input-group-lg">
+      		<span class="input-group-btn">
+            	    <button type="button" class="btn btn-lg" id="goBack" disabled><i class="glyphicon glyphicon-arrow-left"></i></button>
+            	    <button type="button" class="btn btn-lg" id="goForward" style="display:none;"><i class="glyphicon glyphicon-arrow-right"></i></button>
+      	            <img src="img/webmouse.png" id="webmouseimg" />
+		</span>
+                <input id="urlbox" type="text" placeholder="http://" class="input-lg form-control">
       		<span class="input-group-btn">
             	    <button type="submit" class="btn btn-lg" id="go"><img src="img/loader.gif" ></button>
       		</span>
